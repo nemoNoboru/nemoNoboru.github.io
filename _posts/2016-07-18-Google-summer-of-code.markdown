@@ -24,25 +24,24 @@ Refer to the [official capnproto page][capnprotoPage] to know more.
 
 
 Ok. Enough introduction. This summer, as a 2016 Google summer of code student my project is extend
-an existing ruby binding to support the CapnProto RPC part.  
+an existing ruby binding to support CapnProto RPC.  
 
 
 But, CapnProto is all coded on C++. Also, it needs to **generate some code** based
 on your schema to work...   
-And add it to your **compilation** unit...
+And add that generated code to your **compilation** unit...
 
 
-**How do you that on ruby??**
+**How do you that in ruby??**
 
 
-Well, it's actually **simple**. The guys that made capnproto also made what they call a
-"dynamic API" that is, a way of runtime-loading your schema and using that.
-Without compiling and generating anything.  
-So, with some wrapping C++ dynamic api classes on ruby and with some tweaks i have
-actually [made it][linkBinding].
+Well, it's actually **simple**. The guys that made capnproto also added to the library what they call a
+"dynamic API" that is, a way of runtime-loading your schema and using it to generate DynamicCapabilities
+Which is a capability that is, well... dynamic.
 
 
-Also, you can check what i have done on this [link][linkCommits]
+So, with some wrapping C++ dynamic classes in ruby and with some tweaks i have [made it][linkBinding].  
+Also, you can check what i have done on this [link][linkCommits].
 
 
 On future posts i will highlight the optimizations, design decisions and problems
@@ -52,7 +51,6 @@ that i ran into.
 Also, at the time writing this posts the binding is fully working and usable.
 The only existing bug is that the server don't shutdown immediately after pressing control-c.
 It only exits after the next request.
-
 
 
 [ttravel]: https://capnproto.org/images/time-travel.png
