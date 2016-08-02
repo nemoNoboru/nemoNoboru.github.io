@@ -3,9 +3,9 @@ layout: post
 title:  "Gsoc 2016 project, CapnProto RPC"
 date:   2016-07-15 16:52:07
 categories: Projects Google
-tags: Google Projects Ruby C++
+tags: Ruby C++ RPC
 image: /images/gitkraken.png
-time: "3 minutes"
+time: "5 minutes"
 excerpt_separator: <!--more-->
 ---
 
@@ -23,34 +23,43 @@ Refer to the [official capnproto page][capnprotoPage] to know more.
 ![time travel!][ttravel]  
 
 
-Ok. Enough introduction. This summer, as a 2016 Google summer of code student my project is extend
+Ok. Enough introduction. This summer, as a 2016 Google summer of code student my project was to extend
 an existing ruby binding to support CapnProto RPC.  
 
-
-But, CapnProto is all coded on C++. Also, it needs to **generate some code** based
-on your schema to work...   
-And add that generated code to your **compilation** unit...
+the existing binding was capable of manage loading a schema, processing and saving messages.
+i've made a list of the changes made in order to support RPC:
 
 
-**How do you that in ruby??**
+- Added support to load InterfacesSchemas
+- Added support to load InterfacesSchemas Methods
+- Added a rough version of a RPC client
+- Added support for remotePromises
+- Added support for pipelining (Client side)
+- Added a better interface to the RPC client (more on this on future posts)
+- Release GIL, manage exceptions, fix memory leaks in RPC client
+- Wrote documentation
+- Added support for CallContext
+- Added a rough version of a RPC server
+- Release GIL, manage exceptions, fix memory leaks in RPC server
+- Added better tests of RPC on pure ruby.
+- Fixed setting parameters not working properly on some cases
+- Added support for pipelining (Server side)
+- Optimization of RPC Client: divided CapClient on EzrpcClient and DynamicCapabilityClient
+- Fixed and rewritten tests and documentation  
+- Fixed binding throwing exceptions at close
+- Optimization of RPC server: divided CapServer on EzrpcServer and DynamicCapabilityServer
+- Rewritten tests and documentation again
+
+By github the total of lines added is ~6k.
+
+You can see the complete lists of commits made [here][linkCommits] and the link to
+the repo is [here][linkBinding].
 
 
-Well, it's actually **simple**. The guys that made capnproto also added to the library what they call a
-"dynamic API" that is, a way of runtime-loading your schema and using it to generate DynamicCapabilities
-Which is a capability that is, well... dynamic.
-
-
-So, with some wrapping C++ dynamic classes in ruby and with some tweaks i have [made it][linkBinding].  
-Also, you can check what i have done on this [link][linkCommits].
-
-
-On future posts i will highlight the optimizations, design decisions and problems
-that i ran into.
-
-
-Also, at the time writing this posts the binding is fully working and usable.
+Also, at the time writing this posts the binding is 100% working and usable.
+And provides support for a level 1 CapnProto RPC.
 The only existing bug is that the server don't shutdown immediately after pressing control-c.
-It only exits after the next request.
+It only exits after the next client request is made.
 
 
 [ttravel]: https://capnproto.org/images/time-travel.png
