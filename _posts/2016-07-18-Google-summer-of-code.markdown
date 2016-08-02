@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Gsoc 2016 project, CapnProto RPC"
+title:  "Gsoc 2016 project, Implementing a CapnProto RPC binding in ruby"
 date:   2016-07-15 16:52:07
 categories: Projects Google
 tags: Ruby C++ RPC
@@ -23,8 +23,8 @@ Refer to the [official capnproto page][capnprotoPage] to know more.
 ![time travel!][ttravel]  
 
 
-Ok. Enough introduction. This summer, as a 2016 Google summer of code student my project was to extend
-an existing ruby binding to support CapnProto RPC.  
+Ok. Enough introduction. **This summer, as a 2016 Google summer of code student my project was to extend
+an existing ruby binding to support CapnProto RPC.**  
 
 the existing binding was capable of manage loading a schema, processing and saving messages.
 i've made a list of the changes made in order to support RPC:
