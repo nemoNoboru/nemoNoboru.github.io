@@ -13,7 +13,7 @@ excerpt_separator: <!--more-->
 
 CapnProto is a extremely fast data interchange format and a capability based RPC
 system. The main point is that it has no decode/encode step.  
-this means that when you have your capnproto structure build you can just write the bytes to
+This means that when you have your capnproto structure build you can just write the bytes to
 disk or send it over rpc.
 
 
@@ -30,7 +30,7 @@ Ok. Enough introduction.
 **This summer, as a 2016 Google summer of code student my project was to extend
 an existing ruby binding to support CapnProto RPC.**  
 
-the existing binding was capable of manage loading a schema, processing and saving messages.
+The existing binding was capable of manage loading a schema, processing and saving messages.
 
 # Philosophy
 
