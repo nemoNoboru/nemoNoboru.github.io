@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "Gsoc 2016 project, Implementing a CapnProto RPC binding in ruby"
-date:   2016-07-15 16:52:07
-categories: Projects Google
+date:   2016-08-19 16:52:07
+categories: Projects
 tags: Ruby C++ RPC
 image: /images/gitkraken.png
-time: "5 minutes"
+time: "2 minutes"
 excerpt_separator: <!--more-->
 ---
 
@@ -13,11 +13,11 @@ excerpt_separator: <!--more-->
 
 CapnProto is a extremely fast data interchange format and a capability based RPC
 system. The main point is that it has no decode/encode step.  
-This means that when you have your capnproto structure build you can just write the bytes to
+this means that when you have your capnproto structure built you can just write the bytes to
 disk or send it over rpc.
 
 
-Talking about the RPC it does "time travel", that is, you can write a bunch of methods
+Talking about the RPC: it does "time travel", that is, you can write a bunch of methods
 operating on the same value and all those methods will be coerced on just one request.
 That is implemented on your code via pipelines.  
 <!--more-->
@@ -89,4 +89,3 @@ It only exits after the next client request is made.
 [linkCommits]: https://github.com/nemoNoboru/capnp-ruby/commits/master?author=nemoNoboru
 [capnprotoPage]: https://capnproto.org/
 [link_gem]: https://rubygems.org/gems/capn_proto-rpc
-[rubygems]: https://rubygems.org/
