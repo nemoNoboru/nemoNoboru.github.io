@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Gsoc 2016 project, Implementing a CapnProto RPC binding in ruby"
-date:   2016-08-19 16:52:07
+date:   2016-08-18 16:52:07
 categories: Projects
 tags: Ruby C++ RPC
 image: /images/gitkraken.png
