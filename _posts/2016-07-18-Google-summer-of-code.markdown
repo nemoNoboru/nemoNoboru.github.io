@@ -89,3 +89,4 @@ It only exits after the next client request is made.
 [linkCommits]: https://github.com/nemoNoboru/capnp-ruby/commits/master?author=nemoNoboru
 [capnprotoPage]: https://capnproto.org/
 [link_gem]: https://rubygems.org/gems/capn_proto-rpc
+[rubygems]: https://rubygems.org/
